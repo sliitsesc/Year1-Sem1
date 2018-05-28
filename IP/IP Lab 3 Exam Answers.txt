@@ -1,0 +1,33 @@
+//Version 3A
+#include <stdio.h>
+
+int main(void){
+
+    //Variable declaration
+    int employeeNo, rank;
+    double bonus, basicSalary, finalSalary;
+
+    for (int i = 0; i < 3; ++i) {
+        printf("Input Employee No : ");
+        scanf("%d", &employeeNo);
+
+        printf("Input basic salary : ");
+        scanf("%lf", &basicSalary);
+
+        printf("Input rank : ");
+        scanf("%d", &rank);
+
+        switch (rank){
+            case 1: bonus = basicSalary * 0.05;
+                break;
+            case 2: bonus = basicSalary * 0.1;
+                break;
+            case 3: bonus = basicSalary * 0.15;
+                break;
+            default: printf("Invalid rank !!\n");
+        }
+
+        finalSalary = basicSalary + bonus;
+        printf("%d : %.2lf \n", employeeNo, finalSalary);
+    }
+}

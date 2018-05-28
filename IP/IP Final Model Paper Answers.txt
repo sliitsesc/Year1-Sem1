@@ -1,0 +1,193 @@
+//Question 1
+#include <stdio.h>
+int main(void){
+
+    char roomType, payMethod, con;
+    int numOfRooms, night;
+    double rate = 0, discount = 0, total;
+
+    do{
+        printf("Input room type : ");
+        roomType = (char) getchar();
+
+        printf("Input payment method : ");
+        payMethod = (char) getchar();
+
+        printf("Input number of rooms : ");
+        scanf("%d", &numOfRooms);
+
+        printf("Input number of nights : ");
+        scanf("%d ", &night);
+
+        switch (roomType){
+            case 'D': rate = 31000;
+                break;
+            case 'S': rate = 35000;
+                break;
+            case 'C': rate = 50000;
+                break;
+            case 'E': rate = 75000;
+                break;
+            case 'P': rate = 100000;
+                break;
+            default: printf("Invalid type ");
+        }
+
+        if (payMethod == 'C' || payMethod == 'c'){
+            discount = 0.1;
+        }
+
+        total = rate * numOfRooms * night;
+        total = rate + rate * discount;
+
+        printf("Your total : %.2f \n", total);
+
+        printf("Do you want to continue ?  ");
+        con = (char) getchar();
+    }while (con == 'Y' || con == 'y');
+
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 2
+
+#include <stdio.h>
+
+int main(void){
+
+    int day, dayOfMin, dayOfMax;
+    double totalUsage = 0, averageUsage, min, max;
+    double usage[4][7] = {1.2, 2.1, 0.8, 0.0, 1.0, 1.3, 4.0, 1.5, 3.2, 1.0, 1.3, 4.0, 1.5, 3.2, 2.3, 0.4, 1.2, 2.1, 0.8, 0.0, 2.6,
+                          2.1, 1.7, 7.0, 1.2, 2.1, 0.8, 0.0
+    };
+
+    min = usage[0][0];
+    max = usage[0][0];
+
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 7; ++j) {
+            totalUsage += usage[i][j];
+            day++;
+
+            if (min > usage[i][j]){
+                min = usage[i][j];
+                dayOfMin = day;
+            }
+
+            if (max < usage[i][j]){
+                max = usage[i][j];
+                dayOfMax = day;
+            }
+        }
+    }
+
+    averageUsage = totalUsage / 28.0;
+
+    printf("Day of the Month with maximum usage : %d \n", dayOfMax);
+    printf("Maximum Usage in units : %.1f \n", max);
+    printf("Day of the Month with minimum usage : %d \n", dayOfMin);
+    printf("Minimum Usage in units : %.1f \n", min);
+    printf("Average usage for the Month : %.1f \n", averageUsage);
+    printf("Total usage for the month : %.1f \n", totalUsage);
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 3
+
+#include <stdio.h>
+
+#define SIZE 2
+
+struct call{
+    int phoneNo;
+    double localCallCharge;
+    double inCallCharge;
+    double roamingCharge;
+};
+
+int main(void){
+    struct call callList[SIZE];
+
+    for (int i = 0; i < SIZE; ++i) {
+        printf("Input Phone Number : ");
+        scanf("%d", &callList[i].phoneNo);
+
+        printf("Input Local Call Charge : ");
+        scanf("%lf", &callList[i].localCallCharge);
+
+        printf("Input International Call Charge : ");
+        scanf("%lf", &callList[i].inCallCharge);
+
+        printf("Input Roaming Charge : ");
+        scanf("%lf", &callList[i].roamingCharge);
+    }
+
+    FILE *file;
+    file = fopen("chargers.dat", "w");
+
+    for (int j = 0; j < SIZE; ++j) {
+        fprintf(file,"%d %lf %lf %lf \n",callList[j].phoneNo,callList[j].localCallCharge,callList[j].inCallCharge,callList[j].roamingCharge);
+    }
+
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 4
+
+#include <stdio.h>
+
+float calculateIncrement(int grade, float basicSalary);
+
+float calcTotSalary(float salary, float increment);
+
+int main(void) {
+
+    int grade;
+    float basicSalary, totalSalary, increment;
+
+    printf("Input basic salary : ");
+    scanf("%f", &basicSalary);
+
+    printf("Input grade : ");
+    scanf("%d", &grade);
+
+    increment = calculateIncrement(grade, basicSalary);
+    totalSalary = calcTotSalary(basicSalary, increment);
+
+    printf("Increment : %.2f \n", increment);
+    printf("Total Salary : %.2f \n", totalSalary);
+
+    return 0;
+}
+
+float calculateIncrement(int grade, float basicSalary){
+
+    float increment;
+
+    switch (grade){
+        case 1 : increment = 0.1;
+            break;
+        case 2 : increment = 0.15;
+            break;
+        case 3 : increment = 0.2;
+            break;
+        default: increment = 0;
+    }
+
+    return increment;
+
+}
+
+float calcTotSalary(float salary, float increment){
+
+    float totalSalary = salary + salary * increment;
+
+    return totalSalary;
+
+}

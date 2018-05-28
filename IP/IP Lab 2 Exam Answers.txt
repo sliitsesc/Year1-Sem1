@@ -1,0 +1,184 @@
+//Version 1B
+
+#include <stdio.h>
+int main(void) {
+    int courseNo, marks;
+    float discount, courseFee,newFee;
+
+    printf("Input Course No :");
+    scanf("%d", &courseNo);
+
+    printf("Input marks : ");
+    scanf("%d", &marks);
+
+    if (courseNo == 1){
+        courseFee = 150000;
+
+        if (marks >= 80 && marks <= 100){
+            discount = (float) ((courseFee * 7.5) / 100);
+            newFee = courseFee - discount;
+        } else if (marks >= 65){
+            discount = (float) ((courseFee * 5.0) / 100);
+            newFee = courseFee - discount;
+        } else{
+            newFee = courseFee;
+        }
+
+    } else if (courseNo == 2){
+        courseFee = 175000;
+
+        if (marks >= 80 && marks <= 100){
+            discount = (float) ((courseFee * 7.5) / 100);
+            newFee = courseFee - discount;
+        } else if (marks >= 65){
+            discount = (float) ((courseFee * 5.0) / 100);
+            newFee = courseFee - discount;
+        } else{
+            newFee = courseFee;
+        }
+    } else{
+        printf("Invalid course");
+    }
+
+    printf("Course discount : %.2f\n", discount);
+    printf("New course fee : %.2f\n",newFee);
+}
+
+
+///////////////////////////////////////////////////////////////////
+//Version 2B
+
+#include <stdio.h>
+int main(void) {
+
+    //Variable Declaration
+    char vehicleType;
+    float distance, amount;
+
+    printf("Input vehicle type : ");
+    vehicleType = (char) getchar();
+
+    printf("Input distance : ");
+    scanf("%f",&distance);
+
+    switch (vehicleType){
+        case 'C': if (distance > 50){
+                amount = (float) (50 * 45.50 + (distance - 50) * 55.00);
+            } else{
+                amount = (float) (distance * 45.50);
+            }
+            break;
+        case 'V': if (distance > 50){
+                amount = (float) (50 * 40.50 + (distance - 50) * 50.00);
+            } else{
+                amount = (float) (distance * 45.50);
+            }
+            break;
+        case 'T': if (distance > 50){
+                amount = (float) (50 * 35.50 + (distance - 50) * 40.00);
+            } else{
+                amount = (float) (distance * 45.50);
+            }
+            break;
+        default: printf("Invalid vehicle type !!\n");
+    }
+
+    /*switch (vehicleType){
+        case 'C': distance > 50 ?
+                    amount = (float) (50 * 45.50 + (distance - 50) * 55.00) : amount = (float) (distance * 45.50);
+        case 'V': distance > 50 ?
+                    amount = (float) (50 * 40.50 + (distance - 50) * 50.00) : amount = (float) (distance * 40.50);
+        case 'T': distance > 50 ?
+                    amount = (float) (50 * 35.50 + (distance - 50) * 40.00) : amount = (float) (distance * 35.50);
+        default: printf("Invalid vehicle type !!\n");
+    }*/
+
+    printf("Amount : %.2f \n", amount);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Version 1A
+
+#include <stdio.h>
+int main(void) {
+
+    //Variable Declaration
+    int position, sales;
+    float basicSalary, commission, salary;
+
+    printf("Input Position : ");
+    scanf("%d", &position);
+
+    printf("Input sales : ");
+    scanf("%d", &sales);
+
+    switch (position){
+        case 1: basicSalary = 50000;
+            if (sales >= 4000){
+                commission = (float) (basicSalary * 0.15);
+                salary = basicSalary + commission;
+            } else if (sales >= 3000){
+                commission = (float) (basicSalary * 0.12);
+                salary = basicSalary + commission;
+            } else{
+                commission = 0;
+                salary = basicSalary + commission;
+            }
+            break;
+        case 2: basicSalary = 75000;
+            if (sales >= 4000){
+                commission = (float) (basicSalary * 0.15);
+                salary = basicSalary + commission;
+            } else if (sales >= 3000){
+                commission = (float) (basicSalary * 0.12);
+                salary = basicSalary + commission;
+            } else{
+                commission = 0;
+                salary = basicSalary + commission;
+            }
+            break;
+        default: printf("Invalid position !!!!\n");
+    }
+
+    printf("Total monthly salary : %.2f \n", salary);
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+//Version 2A
+
+#include <stdio.h>
+int main(void) {
+
+    //Variable Declaration
+    int type, distance;
+    float amount;
+
+    printf("Input type : ");
+    scanf("%d", &type);
+
+    printf("Input distance : ");
+    scanf("%d", &distance);
+
+    switch (type){
+        case 1: if (distance > 50){
+                amount = (float) (((distance - 50) * 50.00) + (distance - (distance - 50) - 25) * 35.50 + (25 * 25.50));
+            } else if (distance > 25){
+                amount = (float) ((distance - 25) * 35.50 + 25 * 25.50);
+            } else{
+                amount = (float) (distance * 25.50);
+            }
+            break;
+        case 2:if (distance > 50){
+                amount = (float) (((distance - 50) * 55.00) + (distance - (distance - 50) - 25) * 40.50 + (25 * 30.50));
+            } else if (distance > 25){
+                amount = (float) ((distance - 25) * 40.50 + 25 * 30.50);
+            } else{
+                amount = (float) (distance * 30.50);
+            }
+            break;
+        default: printf("Invalid type !!!");
+    }
+
+    printf("Amount : %.2f \n", amount);
+}

@@ -1,0 +1,75 @@
+
+//Question 2
+
+#include <stdio.h>
+#include <math.h>
+
+int main(void){
+
+    double a, b, c, determinant, realPart, imaginaryPart, root1, root2;
+
+    printf("Enter coefficients a, b and c : ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    determinant = pow(b, 2) - (4 * a * c);
+
+    if (determinant > 0){
+        root1 = (-1 * b + sqrt(determinant)) / (2 * a);
+        root1 = (-1 * b - sqrt(determinant)) / (2 * a);
+
+        printf("%lf , %lf \n", root1, root2);
+    } else if(determinant == 0){
+        root1 = root2 = -b / (2 * a);
+        printf("%lf \n",root1);
+    } else {
+        realPart = (-1 * b) / (2 * a);
+        imaginaryPart = sqrt(-1 * determinant) / (2 * a);
+        printf("root1 = %.2lf + %.2lf and root2 = %.2f - %.2f \n", realPart, imaginaryPart, realPart, imaginaryPart);
+    }
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 3
+
+#include <stdio.h>
+#include <math.h>
+
+double circleArea(double radius){
+    return (22.0/7) * pow(radius, 2);
+}
+
+int main(void){
+
+    double radius, area;
+
+    printf("Input radius : ");
+    scanf("%lf", &radius);
+
+    area = circleArea(radius);
+
+    printf("Circle Area : %.2lf \n", area);
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Question 4
+
+#include <stdio.h>
+#include <math.h>
+
+double add(int a, int b){
+    return a + b;
+}
+
+double multiply(int a, int b){
+    return a * b;
+}
+
+double square(int a){
+    return pow(a, 2);
+}
+
+int main(void){
+    double ans = square((int) add((int) multiply(3, 4), (int) multiply(5, 7)));
+
+    printf("Answer : %.2lf \n", ans);
+}

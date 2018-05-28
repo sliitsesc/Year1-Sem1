@@ -1,0 +1,61 @@
+//Exercise 1
+#include <stdio.h>
+#include <math.h>
+
+void drawLines();
+
+void drawLinesWithRow(int rows);
+
+void drawLinesWithRowCol(int rows,int cols);
+
+void drawLinesWithRowColChar(int rows,int cols,char c);
+
+int main(void){
+    drawLines();
+    drawLinesWithRow(6);
+    drawLinesWithRow(12);
+    drawLinesWithRowCol(7,4);
+    drawLinesWithRowCol(5,5);
+    drawLinesWithRowColChar(2,2,'0');
+    return 0;
+}
+
+void drawLines(){
+    for (int i = 0; i <5 ; ++i) {
+        for (int j = 0; j < 10; ++j) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void drawLinesWithRow(int rows){
+    for (int i = 0; i < rows ; ++i) {
+        for (int j = 0; j < 10; ++j) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void drawLinesWithRowCol(int rows,int cols){
+    for (int i = 0; i < rows ; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void drawLinesWithRowColChar(int rows,int cols,char c){
+    for (int i = 0; i < rows ; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            printf("%c",c);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}

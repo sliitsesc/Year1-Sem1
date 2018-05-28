@@ -1,0 +1,77 @@
+//Question 01
+
+#include <stdio.h>
+int main(void){
+    int value ,total;
+
+    //if user input -1 then loop'll end
+    while (value != -1){
+        printf("Input number : ");
+        scanf("%d", &value);
+
+        if (value != -1){
+            total += value;
+        }
+    }
+
+    printf("Total : %d", total);
+}
+
+///////////////////////////////////////////////////////
+//Question 02
+
+#include <stdio.h>
+int main(void){
+    int value ,min;
+
+    printf("Input number : ");
+    scanf("%d", &min);
+
+    //if user input -1 then loop'll end
+    while (value != -1){
+        printf("Input number : ");
+        scanf("%d", &value);
+
+        //If the new input is smaller than previous values
+        if (min > value && value != -1){
+            min = value;
+        }
+    }
+
+    printf("Min : %d", min);
+}
+
+////////////////////////////////////////////////////////
+//Question 3
+#include <stdio.h>
+
+struct customer{
+    int customerAccNo;
+    float creditLimit,currentBalance;
+};
+
+int main(void){
+    struct customer customer1;
+    float newCreditLimit;
+
+    //Get values
+    printf("Input Customer Account No : ");
+    scanf("%d", &customer1.customerAccNo);
+
+    printf("Input Credit Limit : ");
+    scanf("%f", &customer1.creditLimit);
+
+    printf("Input Current Balance : ");
+    scanf("%f", &customer1.currentBalance);
+
+    //Generate new Credit limit
+    newCreditLimit = customer1.creditLimit / 2;
+
+    if (newCreditLimit > customer1.currentBalance){
+        printf("Credit Limit Exceed");
+    } else{
+        printf("Credit Limit not Exceed");
+    }
+
+}
+

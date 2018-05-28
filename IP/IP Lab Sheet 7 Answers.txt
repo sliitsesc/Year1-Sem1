@@ -1,0 +1,91 @@
+//Ex 1 
+#include <stdio.h>
+int main(void){
+
+    int i,j,k;
+
+    //a)
+    printf("a)\n\n");
+    for (i = 1; i <=10 ; i++) {
+        for (j = 1; j <= i; j++){
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    //b
+    printf("\nb)\n\n");
+    for (i = 1; i <= 10; i++){
+        for (j = 10; j >= i ; j--){
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    //c
+    printf("\nc)\n\n");
+    k = 10;
+    for (i = 1; i <= k; i++ ){
+        for(j = 1; j < i ; j++){
+            printf(" ");
+        }
+
+        for (j = i; j <= k; j++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    //d
+    printf("\nd)\n\n");
+    k = 10;
+    for (i = 1; i <= k; i++){
+        for (j = i; j < k; j++){
+            printf(" ");
+        }
+
+        for (j = 1; j <= i; j++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+//////////////////////////////////////////////////////
+//Ex 2
+
+#include <stdio.h>
+int main(void) {
+    float pi;
+    int i;
+
+    for (i = 1; i <= 100 ; i++ ){
+        if (i % 2 == 0){
+            pi = (float) (pi - (4.0 / (2 * i - 1)));
+        } else{
+            pi = (float) (pi + (4.0 / (2 * i - 1)));
+        }
+    }
+
+    printf("Pi value : %f \n", pi);
+
+}
+
+
+
+///////////////////////////////////////////////////////
+//Ex 3
+#include <stdio.h>
+int main(void) {
+    int num, factorial = 1;
+
+    printf("Input number : ");
+    scanf("%d",&num);
+
+    while (num > 0){
+        factorial *=num;
+        num--;
+    }
+
+    printf("Factorial : %d", factorial);
+}

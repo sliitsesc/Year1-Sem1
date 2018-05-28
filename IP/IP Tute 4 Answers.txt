@@ -1,0 +1,66 @@
+//Q1 i)
+
+#include <stdio.h>
+
+int main(void){
+    int num1,num2;
+
+    printf("Input numbers : ");
+    scanf("%d %d",&num1,&num2);
+
+    if (num1 > num2){
+        printf("%d is larger",num1);
+    } else{
+        printf("%d is larger",num2);
+    }
+
+    return 0;
+}
+
+/////////////////////////////////////////////
+ii)
+
+#include <stdio.h>
+
+int main(void){
+    int marks;
+
+    printf("Input final marks : ");
+    scanf("%d",&marks);
+
+    if (marks > 45){
+        printf("Pass");
+    } else{
+        printf("Fail");
+    }
+
+    return 0;
+}
+
+//////////////////////////////////////////////////////
+iii)
+
+
+//Check number type
+#include <stdio.h>
+
+int main(void){
+    int num;
+
+    printf("Input number : ");
+    scanf("%d",&num);
+
+    if (num > 0){
+        printf("Number is positive");
+    } else if(num == 0){
+        printf("Number is zero");
+    } else{
+        printf("Number is negative");
+    }
+
+    return 0;
+}
+
+///////////////////////////////////////
+Q2 )
+

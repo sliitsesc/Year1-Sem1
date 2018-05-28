@@ -1,0 +1,177 @@
+//Ex 1.1
+#include <stdio.h>
+int main(void){
+	int num1, num2, output = 0;
+	char op;
+
+	printf("Input numbers : ");
+	scanf("%d %d", &num1, &num2);
+
+	printf("Input operator type : ");
+	scanf(" %c", &op);
+
+	if (op == '+'){
+		output = num1 + num2;
+	} else if (op == '-'){
+        output = num1 - num2;
+    } else if (op == '*'){
+        output = num1 * num2;
+    } else if (op == '/'){
+        output = num1 / num2;
+    } else{
+        printf("Invalid operator");
+    }
+    printf("%d", output);
+}
+//////////////////////////////////////////////////
+//Ex 1.2
+
+#include <stdio.h>
+int main(void){
+	int num1, num2, output;
+	char op;
+
+	printf("Input num1 : ");
+	scanf("%d", &num1);
+
+    printf("Input num2 : ");
+    scanf("%d", &num2);
+
+	printf("Input operator type : ");
+	scanf(" %c", &op);
+
+	switch (op){
+        case '+': {
+            output = num1 + num2;
+            break;
+        }
+        case '-':{
+            output = num1 - num2;
+            break;
+        }
+        case '*':{
+            output = num1 * num2;
+            break;
+        }
+        case '/':{
+            output = num1 / num2;
+            break;
+        }
+        default: {
+            printf("Invalid operator \n");
+        }
+    }
+
+    printf("Output : %d \n", output);
+}
+
+
+
+/////////////////////////////////////
+//Ex2 
+#include <stdio.h>
+int main(void){
+    int productNo, qty;
+    double totalPrice, unitPrice;
+
+    printf("Input Product No : ");
+    scanf("%d", &productNo);
+
+    printf("Input quantity : ");
+    scanf("%d", &qty);
+
+    switch (productNo){
+        case 1:
+            unitPrice = 2.98;
+            break;
+        case 2:
+            unitPrice = 4.5;
+            break;
+        case 3:
+            unitPrice = 9.98;
+            break;
+        case 4:
+            unitPrice = 4.49;
+            break;
+        case 5:
+            unitPrice = 6.87;
+            break;
+        default:
+            unitPrice = 0;
+            printf("Invalid product : ");
+    }
+
+    totalPrice = unitPrice * qty;
+
+    printf("%.2f",totalPrice);
+}
+///////////////////
+Ex3 
+////
+
+
+#include <stdio.h>
+int main(void){
+    char shapeType;
+    float side, height, base, area;
+
+    printf("Input Shape Type(S or T) : ");
+    scanf("%c", &shapeType);
+
+    if (shapeType == 'S' || shapeType == 's'){
+        printf("Input length of side : ");
+        scanf("%.2f", &side);
+        printf("%.2f",side);
+        area = side * side;
+        printf("Square area is %.2f \n", area);
+    } else if (shapeType == 'T' || shapeType == 't'){
+        printf("Input base : ");
+        scanf("%.2f", &base);
+        printf("Input height : ");
+        scanf("%.2f", &height);
+
+        area = (base * height) / 2;
+        printf("Triangle area is %.2f \n", area);
+    } else{
+        printf("Invalid Shape Type!");
+    }
+}
+
+//////////////////////////////////////////////
+
+#include <stdio.h>
+int main(void){
+    char shapeType;
+    float side, height, base, radius, area, PI = 22/7;
+
+    printf("Input Shape Type : ");
+    scanf("%c", shapeType);
+
+    switch (shapeType){
+        case 'S':
+            printf("Input length of side : ");
+            scanf("%.2f", &side);
+            printf("%.2f",side);
+            area = side * side;
+            printf("Square area is %.2f \n", area);
+            break;
+        case 'T':
+            printf("Input base : ");
+            scanf("%.2f", &base);
+            printf("Input height : ");
+            scanf("%.2f", &height);
+
+            area = (base * height) / 2;
+            printf("Triangle area is %.2f \n", area);
+            break;
+        case 'C':
+            printf("Input radius : ");
+            scanf("%.2f", &radius);
+            
+            area = PI * radius * radius;
+            printf("Circle area is %.2f", &area);
+            break;
+        default: 
+            printf("Invalid Shape!!!!!");
+    }
+}
