@@ -1,0 +1,86 @@
+//Labsheet 4 Answers
+
+//*********************Exercise 1********************************************
+//This will check whether the entered number is  an odd or even number
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    
+    printf("Enter Number:");//prompt
+    scanf("%d", &num);//input
+    
+    if(num % 2 == 0)
+        printf("Even Number\n");//check condition for an even number and print
+    else
+        printf("Odd Number\n");
+
+    return 0;
+}
+
+//*******************Exercise 2***********************************************
+//This will check for the containig gas of a cycilnder according to the colour code
+
+#include <stdio.h>
+
+int main()
+{
+    char colour;
+    
+    printf("Colour List:\nOrange\nBrown\nYellow\nGreen\n\n");//print the colour list
+    printf("Enter Colour(First Letter Only):");//prompt
+    scanf(" %c", &colour);//taking user input
+    
+    if(colour == 'O' || colour == 'o'){
+        printf("Ammonia\n");
+    }
+    if(colour == 'B' || colour == 'b'){
+        printf("Carbon Monoxide\n");
+    }
+    if(colour == 'Y' || colour == 'y'){
+        printf("Hydrogen\n");
+    }
+    if(colour == 'G' || colour == 'g'){
+        printf("Oxygen");
+    }
+    printf("Glad To Be Of Service\n");
+
+    return 0;
+}
+
+//**********************Exercise 3********************************************
+//This will check the entered 5 digit number is a palindrome or not.
+//Palindrome is a text which can be read same in the reverse.
+
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    
+    printf("Enter Number:");
+    scanf("%d", &num);
+
+    //condition for a 5 digit number
+    if(num < 10000 || num > 99999)
+    	printf("Enter a five digit number\n");
+    
+    //check the first and last digits
+    if(num % 10 == (num / 10000) % 10){
+
+    	//check second and fourth digits
+        if((num / 10) % 10 == (num / 1000) % 10){
+            printf("Number Is A Palindrome\n");
+        }
+        else
+            printf("Number Is Not A Palindrome\n");
+        
+    }
+
+    return 0;
+}
+
+
