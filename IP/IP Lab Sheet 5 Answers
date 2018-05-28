@@ -1,0 +1,135 @@
+//Lab Sheet 5
+
+//****************Question 1**************************************
+//This is a simple calculator made using c language
+//First Method Using nested if else if statements
+
+#include <stdio.h>
+int main (void)
+{
+	int a;
+	int b;
+	char oper;
+	int ans;
+
+	//Prompts and User Inputs
+	printf ("%s", "Enter First Number:");
+	scanf ("%d", &a);
+	printf ("%s", "Enter Second Number:");
+	scanf ("%d", &b);
+	printf ("%s", "Enter The Operator:");
+	scanf (" %c", &oper);
+	
+	//Operation selection according to the operator selected
+ 	if (oper == '+'){
+		printf ("%d\n", ans = a + b);
+	}
+	else if (oper == '-'){
+		printf ("%d\n", ans = a - b);
+	}
+	else if (oper == '*'){
+		printf ("%d\n", ans = a * b);
+	}
+	else if (oper == '/'){
+		printf ("%d\n", ans = a / b);
+	}
+	else
+		printf ("%s", "Enter A Valid Operator\n");
+	return 0;
+}
+
+//Method 2 Using switch statements
+
+#include <stdio.h>
+int main (void)
+{
+	int a;
+	int b;
+	int ans;
+	char oper;
+	
+	printf ("%s", "Enter Number 1:");
+	scanf ("%d", &a);
+	printf ("%s", "Enter NUmber 2:");
+	scanf ("%d", &b);
+	printf ("Enter The Operator:");
+	scanf (" %c", &oper);
+	
+	switch (oper)
+	{
+		case '+' : printf ("%d\n", ans = a + b);
+			break;
+		case '-' : printf ("%d\n", ans = a - b);
+			break;
+		case '*' : printf ("%d\n", ans = a * b);
+			break;
+		case '/' : printf ("%d\n", ans = a / b);
+			break;
+		default : printf ("%s", "Invalid Operator\n");
+	}
+	return 0;
+}
+
+//****************************Question 2******************************************
+//This is a C Programme to calculate the toatal when you know the retail price and quantity
+
+#include <stdio.h>
+int main (void)
+{
+	int productNo;
+	float retailPrice;
+	int quantity;
+	float totalR;
+
+	printf ("%s", "Enter Product Number:");
+	scanf ("%d", &productNo);
+	printf ("%s", "Enter Quantity:");
+	scanf ("%d", &quantity);
+
+	switch (productNo)
+	{
+		case 1 : printf ("Total Retail Price = %.2f\n", totalR = quantity * 2.98);
+			break;
+		case 2 : printf ("Total Retail Price = %.2f\n", totalR = quantity * 4.50);
+			break;
+		case 3 : printf ("Total Retail Price = %.2f\n", totalR = quantity * 9.98);
+			break;
+		case 4 : printf ("Total Retail Price = %.2f\n", totalR = quantity * 4.49);
+			break;
+		case 5 : printf ("Total Retail Price = %.2f\n", totalR = quantity * 6.87);
+			break;
+		default : printf ("Enter A Valid Product Number\n");
+	}
+	return 0;
+}
+
+//**********************************Question 3****************************************************
+//This programe calculate area according to the user inputs
+
+#include <stdio.h>
+int main (void)
+{
+	char shape;
+	float side, base, height, area;
+
+	printf ("Enter The First Leter Of Shape In Capital:");
+	scanf (" %c", &shape);
+
+	if (shape == 'S'){
+		printf ("Enter Side Length:");
+		scanf ("%f", &side);
+		area = side * side;
+		printf ("The Area Of Square = %.2f\n", area);
+	}
+	 else if (shape == 'T'){
+		printf ("Enter Base:");
+		scanf ("%f", &base);
+		printf ("Enter height");
+		scanf ("%f", &height);
+		area =(height * base) / 2;
+		printf ("The Area Of Triangle = %.2f\n ", area);
+	}
+	else
+		printf ("Enter A Valid Letter\n");
+	return 0;
+}
