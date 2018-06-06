@@ -32,5 +32,7 @@ int main(void){
     for (int j = 0; j < SIZE; ++j) {
         fprintf(file,"%d %lf %lf %lf \n",callList[j].phoneNo,callList[j].localCallCharge,callList[j].inCallCharge,callList[j].roamingCharge);
     }
+    
+    fclose(file);
 
 }
